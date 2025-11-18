@@ -1,0 +1,98 @@
+---
+title: "The Power of Compound Interest: A Mathematical Deep Dive"
+description: "Understanding the exponential growth of wealth through compound interest with interactive calculators"
+author: "Velocity FI Team"
+date: "2024-01-10"
+cluster: "cluster-1"
+readTime: 7
+---
+
+# The Power of Compound Interest: A Mathematical Deep Dive
+
+Albert Einstein allegedly called compound interest "the eighth wonder of the world." Whether or not he actually said it, the sentiment holds true: compound interest is the fundamental force behind wealth accumulation in modern finance.
+
+## The Mathematics
+
+The compound interest formula is deceptively simple:
+
+**A = P(1 + r/n)^(nt)**
+
+Where:
+- **A** = Final amount
+- **P** = Principal (initial investment)
+- **r** = Annual interest rate (decimal)
+- **n** = Number of times interest compounds per year
+- **t** = Time in years
+
+## The Exponential Difference
+
+Let's compare simple vs. compound interest on **$10,000** at **7% annual return** over **30 years**:
+
+- **Simple Interest:** $10,000 + ($10,000 × 0.07 × 30) = **$31,000**
+- **Compound Interest:** $10,000 × (1.07)^30 = **$76,123**
+- **Difference:** $45,123 (145% more!)
+
+## The Rule of 72
+
+A quick mental math trick for estimating doubling time:
+
+**Years to Double = 72 / Interest Rate**
+
+Examples:
+- At 6% annual return: 72 / 6 = **12 years**
+- At 8% annual return: 72 / 8 = **9 years**
+- At 10% annual return: 72 / 10 = **7.2 years**
+
+## Interactive Calculator
+
+Play with the numbers yourself. Notice how small changes in rate or time have exponential effects:
+
+import CompoundInterestCalculator from '@/components/CompoundInterestCalculator';
+
+<CompoundInterestCalculator />
+
+## Key Insights for FIRE Pursuers
+
+### 1. Time is Your Biggest Lever
+Starting 10 years earlier can mean **hundreds of thousands** more in final wealth, even with smaller contributions.
+
+### 2. Rate Optimization Matters
+Moving from 5% to 7% annual returns can result in **50%+ more** final wealth over 30 years.
+
+### 3. Consistency Beats Timing
+Regular monthly contributions (dollar-cost averaging) typically outperform trying to time market entries.
+
+## Real-World Application
+
+For a **tech worker earning $150k/year**:
+
+- **Savings rate:** 40% = $60,000/year ($5,000/month)
+- **Starting capital:** $50,000
+- **Expected return:** 7% (S&P 500 historical average)
+- **Time horizon:** 15 years
+
+**Result:** ~$1.9 million
+
+At a 4% withdrawal rate (the traditional FIRE number), that's **$76,000/year** in passive income.
+
+## The Downside: Lifestyle Inflation
+
+The flip side of compound interest is **lifestyle creep**. If your expenses grow at the same rate as your investments, you're running to stand still.
+
+**Formula for FIRE:**
+```
+FIRE Number = Annual Expenses × 25
+Time to FIRE = f(Savings Rate, Return Rate)
+```
+
+## Conclusion
+
+Compound interest isn't magic - it's mathematics. Understanding it deeply gives you the mental model to make rational decisions about:
+- Savings rates
+- Investment vehicles
+- Risk tolerance
+- Time horizons
+
+Use the calculator above to model your own scenarios and build your personalized path to financial independence.
+
+*This is educational content, not financial advice. Past performance doesn't guarantee future results.*
