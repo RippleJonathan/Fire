@@ -1,0 +1,146 @@
+---
+title: "Algorithmic Trading for Beginners"
+description: "Introduction to automated trading strategies and how tech workers can leverage their skills"
+author: "Velocity FI Team"
+date: "2024-01-20"
+cluster: "cluster-2"
+readTime: 8
+---
+
+# Algorithmic Trading for Beginners
+
+As a tech worker or engineer, you possess a unique advantage in the world of trading: **you can code**. Algorithmic trading (algo-trading) is the practice of using computer programs to execute trading strategies automatically, and it's more accessible than ever in 2024.
+
+## What is Algorithmic Trading?
+
+Algo-trading uses predefined rules and mathematical models to make trading decisions. Instead of manually clicking "buy" or "sell," your code does it for you based on:
+
+- Price movements
+- Technical indicators (RSI, MACD, Bollinger Bands)
+- Volume patterns
+- Market microstructure
+- Machine learning predictions
+
+## Why Tech Workers Excel at Algo-Trading
+
+### 1. Programming Skills
+You already know Python, JavaScript, or another language. Trading APIs are just another REST endpoint.
+
+### 2. Systems Thinking
+Understanding data structures, algorithms, and system design translates directly to trading strategy design.
+
+### 3. Statistical Knowledge
+If you've worked with analytics, A/B testing, or ML, you understand probability and statistics - the foundation of profitable trading.
+
+## The Algorithmic Trading Stack
+
+### Languages
+- **Python:** Most popular (pandas, numpy, backtrader)
+- **JavaScript/TypeScript:** For web-based platforms
+- **C++/Rust:** For ultra-low latency strategies
+
+### Platforms & APIs
+- **Alpaca:** Commission-free API for stocks
+- **Interactive Brokers:** Professional-grade API
+- **Binance/Coinbase:** Crypto trading APIs
+- **QuantConnect:** Cloud-based backtesting
+
+### Key Libraries
+```python
+import pandas as pd           # Data manipulation
+import numpy as np            # Numerical computing
+import backtrader as bt       # Backtesting framework
+import alpaca_trade_api as tradeapi  # Live trading
+```
+
+## Basic Strategy: Simple Moving Average Crossover
+
+One of the simplest algorithmic strategies:
+
+**Rules:**
+1. Buy when short-term MA crosses above long-term MA (Golden Cross)
+2. Sell when short-term MA crosses below long-term MA (Death Cross)
+
+**Pseudocode:**
+```python
+if SMA(20) > SMA(50) and position == 0:
+    buy(quantity)
+elif SMA(20) < SMA(50) and position > 0:
+    sell(quantity)
+```
+
+## Risk Management is Everything
+
+The difference between profitable algo-trading and blowing up your account:
+
+### Position Sizing
+Never risk more than 1-2% of capital per trade.
+
+### Stop Losses
+Automated exit points to limit downside.
+
+### Diversification
+Run multiple uncorrelated strategies.
+
+### Backtesting
+Test on historical data before risking real money.
+
+## Common Pitfalls
+
+### 1. Overfitting
+Your strategy works perfectly on historical data but fails in live trading. This is the ML equivalent of memorizing the training set.
+
+### 2. Ignoring Transaction Costs
+Commissions and slippage can turn a profitable backtest into a losing strategy.
+
+### 3. No Risk Management
+One bad trade can wipe out months of gains.
+
+### 4. Latency Issues
+For high-frequency strategies, even milliseconds matter.
+
+## Getting Started: Your First Bot
+
+**Week 1-2:** Learn the basics
+- Set up a paper trading account (simulated)
+- Familiarize yourself with trading APIs
+- Understand market data formats
+
+**Week 3-4:** Build a simple strategy
+- Implement SMA crossover or RSI mean reversion
+- Backtest on 2-3 years of data
+- Calculate Sharpe ratio and max drawdown
+
+**Week 5-6:** Paper trade
+- Run your bot in simulation for 1 month
+- Monitor performance daily
+- Iterate and improve
+
+**Week 7+:** Consider going live (small capital)
+- Start with $500-1000
+- Scale slowly as you gain confidence
+
+## Resources for Engineers
+
+- **QuantConnect:** Free cloud-based backtesting
+- **Alpaca API:** Commission-free paper trading
+- **r/algotrading:** Active community
+- **QuantInsti:** Educational courses
+
+## The Reality Check
+
+Most retail algo-traders don't beat the market. High-frequency trading (HFT) is dominated by firms with millions in infrastructure. But as a learning exercise and side project, algo-trading teaches you:
+
+- Financial markets mechanics
+- Statistical thinking
+- Real-world software engineering under constraints
+
+And if you do find an edge? The returns can be life-changing.
+
+## Conclusion
+
+Algorithmic trading sits at the intersection of software engineering and finance - perfect for tech workers looking to apply their skills in a new domain. Start small, learn continuously, and never risk more than you can afford to lose.
+
+The code is the easy part. The hard part is finding strategies that actually work.
+
+*This is educational content. Trading involves significant risk of loss. Not financial advice.*
