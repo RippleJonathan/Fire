@@ -1,0 +1,200 @@
+---
+title: "Building Trading Bots: A Technical Guide"
+author: "Velocity FI Team"
+date: "2025-01-25"
+description: "Technical walkthrough for building your first algorithmic trading bot with Python."
+category: "Algo Trading"
+tags: ["python", "trading bots", "automation", "coding"]
+---
+
+# Building Trading Bots: A Technical Guide
+
+For the engineers and developers in the FIRE community, building your own trading bot is both educational and potentially profitable. Let's dive into the technical details.
+
+## Architecture Overview
+
+```
+Market Data API → Strategy Engine → Risk Manager → Order Execution → Portfolio Tracker
+```
+
+## Prerequisites
+
+- Python 3.8+
+- Basic understanding of finance
+- API credentials for a brokerage
+- Database for logging (optional but recommended)
+
+## Core Components
+
+### 1. Data Pipeline
+
+```python
+import yfinance as yf
+import pandas as pd
+
+def fetch_market_data(symbol, period='1y'):
+    """Fetch historical market data"""
+    ticker = yf.Ticker(symbol)
+    data = ticker.history(period=period)
+    return data
+```
+
+### 2. Strategy Implementation
+
+```python
+def simple_moving_average_strategy(data, short_window=50, long_window=200):
+    """
+    Generate buy/sell signals based on SMA crossover
+    """
+    data['SMA_short'] = data['Close'].rolling(window=short_window).mean()
+    data['SMA_long'] = data['Close'].rolling(window=long_window).mean()
+    
+    data['Signal'] = 0
+    data.loc[data['SMA_short'] > data['SMA_long'], 'Signal'] = 1  # Buy
+    data.loc[data['SMA_short'] < data['SMA_long'], 'Signal'] = -1  # Sell
+    
+    return data
+```
+
+### 3. Backtesting Framework
+
+```python
+def backtest_strategy(data, initial_capital=10000):
+    """
+    Backtest the strategy on historical data
+    """
+    capital = initial_capital
+    position = 0
+    
+    for i in range(len(data)):
+        if data['Signal'].iloc[i] == 1 and position == 0:
+            # Buy
+            position = capital / data['Close'].iloc[i]
+            capital = 0
+        elif data['Signal'].iloc[i] == -1 and position > 0:
+            # Sell
+            capital = position * data['Close'].iloc[i]
+            position = 0
+    
+    # Final portfolio value
+    if position > 0:
+        capital = position * data['Close'].iloc[-1]
+    
+    return capital
+```
+
+## Production Considerations
+
+### Error Handling
+
+```python
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def execute_trade(symbol, quantity, action):
+    try:
+        # API call to broker
+        response = broker_api.place_order(symbol, quantity, action)
+        logger.info(f"Trade executed: {action} {quantity} {symbol}")
+        return response
+    except Exception as e:
+        logger.error(f"Trade failed: {str(e)}")
+        # Send alert notification
+        send_alert(f"Trade error: {str(e)}")
+```
+
+### Rate Limiting
+
+```python
+import time
+from functools import wraps
+
+def rate_limit(max_calls, time_window):
+    """Decorator to limit API calls"""
+    calls = []
+    
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            now = time.time()
+            calls[:] = [c for c in calls if c > now - time_window]
+            
+            if len(calls) >= max_calls:
+                sleep_time = time_window - (now - calls[0])
+                time.sleep(sleep_time)
+            
+            calls.append(time.time())
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
+```
+
+## Deployment Strategies
+
+### Cloud Hosting Options
+1. **AWS Lambda**: Serverless, event-driven execution
+2. **Google Cloud Functions**: Pay-per-invocation model
+3. **Heroku**: Simple deployment for 24/7 bots
+4. **DigitalOcean**: VPS for full control
+
+### Monitoring
+
+```python
+def track_performance(trades_db):
+    """Calculate key performance metrics"""
+    returns = trades_db['return'].values
+    
+    metrics = {
+        'total_return': (trades_db['final_value'] / trades_db['initial_value']) - 1,
+        'sharpe_ratio': returns.mean() / returns.std() * (252 ** 0.5),
+        'max_drawdown': calculate_max_drawdown(trades_db),
+        'win_rate': (trades_db['return'] > 0).sum() / len(trades_db)
+    }
+    
+    return metrics
+```
+
+## Security Best Practices
+
+1. **Never hardcode API keys**: Use environment variables
+2. **Encrypt sensitive data**: Use libraries like `cryptography`
+3. **Implement 2FA**: For all API access
+4. **Regular audits**: Review trade logs weekly
+5. **Position limits**: Cap maximum position size
+
+## Cost Analysis
+
+Running a trading bot:
+- **API costs**: $0-50/month (depending on data needs)
+- **Hosting**: $5-50/month
+- **Trading commissions**: $0 (most brokers now offer free trades)
+- **Time investment**: 10-20 hours initial setup, 2-5 hours/month maintenance
+
+## Warning: Trading Involves Risk
+
+- Start with paper trading (simulated)
+- Never invest more than you can afford to lose
+- Diversify across strategies
+- Monitor performance regularly
+- Be prepared to shut down losing strategies
+
+## Next Steps
+
+1. Build a simple bot with paper trading
+2. Backtest thoroughly (minimum 5 years of data)
+3. Forward test for 3-6 months
+4. Start with small real capital ($1,000-5,000)
+5. Scale gradually based on performance
+
+## Resources
+
+- Alpaca API: Free trading API with paper trading
+- QuantConnect: Algorithmic trading platform
+- Backtrader: Python backtesting library
+- Zipline: Pythonic algorithmic trading library
+
+---
+
+*Velocity FI: Code your way to financial freedom.*
