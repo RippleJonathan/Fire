@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 15 39;
+    --foreground: 255 255 255;
+  }
+
+  body {
+    @apply bg-cyber-darker text-white;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  /* Cyberpunk glow effects */
+  .cyber-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+
+  .cyber-border {
+    border: 1px solid;
+    border-image: linear-gradient(90deg, #b026ff, #00d9ff, #b026ff) 1;
+  }
+}
+
+@layer components {
+  .btn-cyber {
+    @apply px-6 py-3 bg-transparent border-2 border-cyber-purple text-cyber-purple font-bold uppercase tracking-wider transition-all duration-300 hover:bg-cyber-purple hover:text-white hover:shadow-[0_0_20px_rgba(176,38,255,0.6)];
+  }
+
+  .card-cyber {
+    @apply bg-cyber-dark border border-cyber-purple/30 rounded-lg p-6 backdrop-blur-sm hover:border-cyber-purple/60 transition-all duration-300;
+  }
+
+  .input-cyber {
+    @apply bg-cyber-dark border border-cyber-blue/50 text-white px-4 py-2 rounded focus:border-cyber-blue focus:outline-none focus:shadow-[0_0_10px_rgba(0,217,255,0.5)] transition-all;
+  }
+}
