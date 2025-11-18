@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+:root {
+  /* Cyberpunk Dark Theme */
+  --background: #0a0a0f;
+  --foreground: #e0e0e0;
+  --neon-cyan: #00ffff;
+  --neon-magenta: #ff00ff;
+  --neon-yellow: #ffff00;
+  --neon-green: #00ff00;
+  --terminal-green: #39ff14;
+  --card-bg: #1a1a2e;
+  --border-color: #2a2a4e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-magenta: var(--neon-magenta);
+  --color-neon-yellow: var(--neon-yellow);
+  --color-neon-green: var(--neon-green);
+  --color-terminal-green: var(--terminal-green);
+  --color-card-bg: var(--card-bg);
+  --color-border: var(--border-color);
+  --font-sans: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  line-height: 1.6;
+}
+
+/* Neon text effects */
+.neon-text {
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+}
+
+/* Terminal-style links */
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* MDX Content Styling */
+.mdx-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.mdx-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--neon-magenta);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.mdx-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--terminal-green);
+}
+
+.mdx-content p {
+  margin: 1rem 0;
+}
+
+.mdx-content strong {
+  color: var(--neon-yellow);
+  font-weight: 700;
+}
+
+.mdx-content code {
+  background: var(--card-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: ui-monospace, monospace;
+  color: var(--terminal-green);
+}
+
+.mdx-content pre {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  margin: 1rem 0;
+}
+
+.mdx-content ul, .mdx-content ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.mdx-content li {
+  margin: 0.5rem 0;
+}
+
+/* Performance optimization - prevent layout shift */
+.ad-slot {
+  min-height: 250px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
