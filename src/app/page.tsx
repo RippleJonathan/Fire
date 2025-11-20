@@ -40,53 +40,88 @@ export default function Home() {
         </nav>
 
         <section className="relative z-10 container mx-auto px-6 py-20 text-center">
-          <h2 className="text-6xl md:text-8xl font-cyber font-black mb-6 bg-gradient-to-r from-cyber-purple via-cyber-pink to-cyber-blue bg-clip-text text-transparent animate-pulse-slow">
-            ACHIEVE FIRE
+          <div className="inline-block mb-6 px-4 py-2 bg-cyber-purple/20 border border-cyber-purple/50 rounded-full">
+            <span className="text-cyber-purple text-sm font-bold uppercase tracking-wider">Started at 40 • Building Freedom</span>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-cyber font-black mb-6 bg-gradient-to-r from-cyber-purple via-cyber-pink to-cyber-blue bg-clip-text text-transparent">
+            FIRE for Late Starters
           </h2>
-          <p className="text-xl md:text-2xl text-cyber-blue mb-8 max-w-3xl mx-auto">
-            Financial Independence, Retire Early
+          <p className="text-xl md:text-2xl text-cyber-blue mb-8 max-w-3xl mx-auto font-semibold">
+            I discovered FIRE at 40. You're not too late.
           </p>
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-            High-performance tools and data-driven insights to accelerate your path to financial freedom.
-            Calculate, strategize, and dominate your financial future.
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            I'm a roofing business owner who spent 20 years being frugal without a target. 
+            Now I'm building my path to financial independence—and sharing everything I learn along the way.
+          </p>
+          <p className="text-base text-cyber-green mb-12 max-w-2xl mx-auto">
+            Real strategies. Honest math. No BS. Built for people like me who wish they'd started at 25 but are starting today.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/calculators" className="btn-cyber">
-              Launch Calculator
+            <Link href="/blog/is-40-too-late-for-fire" className="btn-cyber">
+              Read My Story
             </Link>
             <Link 
-              href="/strategies" 
+              href="/calculators/fire" 
               className="px-6 py-3 bg-cyber-blue text-cyber-darker font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,217,255,0.6)]"
             >
-              Explore Strategies
+              Calculate Your Timeline
             </Link>
           </div>
         </section>
       </header>
 
-      {/* Stats Section */}
+      {/* Quick Facts Section */}
       <section className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="card-cyber text-center">
-            <div className="text-5xl font-cyber font-bold text-cyber-green mb-2">4%</div>
-            <div className="text-gray-400">Safe Withdrawal Rate</div>
+          <div className="card-cyber text-center border-cyber-green/30">
+            <div className="text-5xl font-cyber font-bold text-cyber-green mb-2">10-15</div>
+            <div className="text-gray-400 mb-2">Years to FIRE</div>
+            <div className="text-xs text-gray-500">Starting at 40 with 40-60% savings rate</div>
           </div>
-          <div className="card-cyber text-center">
-            <div className="text-5xl font-cyber font-bold text-cyber-pink mb-2">25x</div>
-            <div className="text-gray-400">Annual Expenses to FIRE</div>
+          <div className="card-cyber text-center border-cyber-pink/30">
+            <div className="text-5xl font-cyber font-bold text-cyber-pink mb-2">$69k</div>
+            <div className="text-gray-400 mb-2">Solo 401(k) Limit</div>
+            <div className="text-xs text-gray-500">Max contribution for self-employed (2025)</div>
           </div>
-          <div className="card-cyber text-center">
-            <div className="text-5xl font-cyber font-bold text-cyber-blue mb-2">7%</div>
-            <div className="text-gray-400">Average Market Returns</div>
+          <div className="card-cyber text-center border-cyber-blue/30">
+            <div className="text-5xl font-cyber font-bold text-cyber-blue mb-2">8%</div>
+            <div className="text-gray-400 mb-2">Historical Stock Returns</div>
+            <div className="text-xs text-gray-500">S&P 500 average (inflation-adjusted)</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Blog Post */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-auto card-cyber border-2 border-cyber-purple/50">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="px-3 py-1 bg-cyber-pink/20 text-cyber-pink text-xs font-bold uppercase tracking-wider rounded-full">New Post</span>
+            <span className="text-gray-400 text-sm">November 20, 2025</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-cyber font-bold mb-4 text-cyber-purple">
+            Is 40 Too Late to Start FIRE?
+          </h2>
+          <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            I discovered FIRE at 40. Here's the math, the reality, and why it's not too late (but it does look different). 
+            Real calculations, honest timelines, and a step-by-step plan for late starters.
+          </p>
+          <div className="flex flex-wrap gap-4 items-center">
+            <Link href="/blog/is-40-too-late-for-fire" className="btn-cyber">
+              Read Full Article
+            </Link>
+            <span className="text-gray-400 text-sm">9 min read • Strategy</span>
           </div>
         </div>
       </section>
 
       {/* Interactive Calculator Section */}
       <section className="container mx-auto px-6 py-16">
-        <h2 className="text-4xl font-cyber font-bold text-center mb-12 text-cyber-purple">
-          FIRE Calculator
+        <h2 className="text-4xl font-cyber font-bold text-center mb-4 text-cyber-purple">
+          Calculate Your FIRE Timeline
         </h2>
+        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          See exactly when you can achieve financial independence based on your income, expenses, and savings rate.
+        </p>
         <Calculator />
       </section>
 
@@ -100,60 +135,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Content Sections */}
+      {/* Popular Content */}
       <section className="container mx-auto px-6 py-16">
-        <h2 className="text-4xl font-cyber font-bold text-center mb-12 text-cyber-blue">
-          Master Your Financial Future
+        <h2 className="text-4xl font-cyber font-bold text-center mb-4 text-cyber-blue">
+          Start Here
         </h2>
+        <p className="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+          Whether you're just discovering FIRE or optimizing your strategy, here's where to begin.
+        </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="card-cyber group cursor-pointer">
+          <Link href="/blog/index-funds-vs-stocks" className="card-cyber group hover:border-cyber-purple/50 transition-all">
             <div className="text-2xl font-cyber font-bold text-cyber-purple mb-4 group-hover:cyber-glow transition-all">
-              Investment Strategies
+              Index Funds vs Stocks
             </div>
-            <p className="text-gray-400">
-              Discover proven investment strategies to maximize returns and minimize risk on your path to FIRE.
+            <p className="text-gray-400 mb-4">
+              Why passive investing wins for 95% of FIRE seekers (and why I'm switching my strategy).
             </p>
-          </div>
-          <div className="card-cyber group cursor-pointer">
+            <span className="text-cyber-blue text-sm font-semibold group-hover:text-cyber-pink transition-colors">Read Article →</span>
+          </Link>
+          
+          <Link href="/blog/tax-optimization-fire" className="card-cyber group hover:border-cyber-pink/50 transition-all">
             <div className="text-2xl font-cyber font-bold text-cyber-pink mb-4 group-hover:cyber-glow transition-all">
-              Passive Income
-            </div>
-            <p className="text-gray-400">
-              Build multiple streams of passive income to accelerate your journey to financial independence.
-            </p>
-          </div>
-          <div className="card-cyber group cursor-pointer">
-            <div className="text-2xl font-cyber font-bold text-cyber-blue mb-4 group-hover:cyber-glow transition-all">
               Tax Optimization
             </div>
-            <p className="text-gray-400">
-              Leverage tax-advantaged accounts and strategies to keep more of your wealth working for you.
+            <p className="text-gray-400 mb-4">
+              Save $100k+ over your lifetime with Roth ladders, tax-loss harvesting, and smart account strategies.
             </p>
-          </div>
-          <div className="card-cyber group cursor-pointer">
+            <span className="text-cyber-blue text-sm font-semibold group-hover:text-cyber-pink transition-colors">Read Article →</span>
+          </Link>
+          
+          <Link href="/blog/coast-fire-guide" className="card-cyber group hover:border-cyber-green/50 transition-all">
             <div className="text-2xl font-cyber font-bold text-cyber-green mb-4 group-hover:cyber-glow transition-all">
-              Coast FIRE
+              Coast FIRE Strategy
             </div>
-            <p className="text-gray-400">
-              Calculate when you can coast to retirement without additional savings.
+            <p className="text-gray-400 mb-4">
+              Calculate when you can stop saving and let your investments coast to retirement.
             </p>
-          </div>
-          <div className="card-cyber group cursor-pointer">
+            <span className="text-cyber-blue text-sm font-semibold group-hover:text-cyber-pink transition-colors">Read Article →</span>
+          </Link>
+          
+          <Link href="/calculators/fire" className="card-cyber group hover:border-cyber-blue/50 transition-all">
+            <div className="text-2xl font-cyber font-bold text-cyber-blue mb-4 group-hover:cyber-glow transition-all">
+              FIRE Calculator
+            </div>
+            <p className="text-gray-400 mb-4">
+              Calculate your exact timeline to financial independence based on your numbers.
+            </p>
+            <span className="text-cyber-blue text-sm font-semibold group-hover:text-cyber-pink transition-colors">Try Calculator →</span>
+          </Link>
+          
+          <Link href="/blog/4-percent-rule" className="card-cyber group hover:border-cyber-yellow/50 transition-all">
             <div className="text-2xl font-cyber font-bold text-cyber-yellow mb-4 group-hover:cyber-glow transition-all">
-              Lean FIRE
+              The 4% Rule Explained
             </div>
-            <p className="text-gray-400">
-              Achieve early retirement with minimalist living and frugal strategies.
+            <p className="text-gray-400 mb-4">
+              How much you need to retire early and why the 4% rule might be too aggressive (or too conservative).
             </p>
-          </div>
-          <div className="card-cyber group cursor-pointer">
+            <span className="text-cyber-blue text-sm font-semibold group-hover:text-cyber-pink transition-colors">Read Article →</span>
+          </Link>
+          
+          <Link href="/strategies/traditional-fire" className="card-cyber group hover:border-cyber-purple/50 transition-all">
             <div className="text-2xl font-cyber font-bold text-cyber-purple mb-4 group-hover:cyber-glow transition-all">
-              Fat FIRE
+              Traditional FIRE Path
             </div>
-            <p className="text-gray-400">
-              Build substantial wealth for a luxurious early retirement lifestyle.
+            <p className="text-gray-400 mb-4">
+              The complete step-by-step strategy to achieve full financial independence and early retirement.
             </p>
-          </div>
+            <span className="text-cyber-blue text-sm font-semibold group-hover:text-cyber-pink transition-colors">View Strategy →</span>
+          </Link>
         </div>
       </section>
 
