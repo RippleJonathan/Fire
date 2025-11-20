@@ -1,5 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Calculator from '@/components/Calculator'
+import RelatedContent from '@/components/RelatedContent'
+import AuthorBio from '@/components/AuthorBio'
 
 export default function Home() {
   return (
@@ -8,10 +11,22 @@ export default function Home() {
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/20 via-cyber-dark to-cyber-blue/20 blur-3xl"></div>
         <nav className="relative z-10 container mx-auto px-6 py-6 flex justify-between items-center">
-          <h1 className="text-3xl font-cyber font-bold cyber-glow text-cyber-purple">
-            FIRE_ENGINE
-          </h1>
-          <div className="flex gap-6">
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image 
+              src="/logo.jpg" 
+              alt="Fire Driven Media Logo" 
+              width={50} 
+              height={50}
+              className="rounded-full ring-2 ring-cyber-purple/50 group-hover:ring-cyber-pink transition-all"
+            />
+            <h1 className="text-2xl md:text-3xl font-cyber font-bold cyber-glow text-cyber-purple group-hover:text-cyber-pink transition-colors">
+              Fire Driven Media
+            </h1>
+          </Link>
+          <div className="flex gap-4 md:gap-6 text-sm md:text-base">
+            <Link href="/about" className="text-cyber-blue hover:text-cyber-green transition-colors font-semibold">
+              About
+            </Link>
             <Link href="/calculators" className="text-cyber-blue hover:text-cyber-green transition-colors">
               Calculators
             </Link>
@@ -75,6 +90,16 @@ export default function Home() {
         <Calculator />
       </section>
 
+      {/* Author Credibility Section */}
+      <section className="container mx-auto px-6 py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-cyber font-bold text-center mb-8 text-cyber-blue">
+            Who's Behind This?
+          </h2>
+          <AuthorBio variant="long" />
+        </div>
+      </section>
+
       {/* Content Sections */}
       <section className="container mx-auto px-6 py-16">
         <h2 className="text-4xl font-cyber font-bold text-center mb-12 text-cyber-blue">
@@ -132,10 +157,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Related Resources */}
+      <section className="container mx-auto px-6 py-16">
+        <RelatedContent 
+          keywords={['FIRE', 'financial independence', 'retirement calculator', '4% rule']}
+          currentUrl="/"
+          title="Explore More FIRE Resources"
+          limit={6}
+        />
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-cyber-purple/30 mt-20">
-        <div className="container mx-auto px-6 py-8 text-center text-gray-500">
-          <p className="font-cyber">FIRE_ENGINE © 2024 - Accelerate Your Financial Independence</p>
+        <div className="container mx-auto px-6 py-8">
+          <div className="text-center text-gray-500 mb-4">
+            <p className="font-cyber text-sm mb-2">Fire Driven Media © {new Date().getFullYear()} - Your Path to Financial Independence</p>
+            <p className="text-xs text-cyber-yellow mb-3">⚠️ Not financial advice. For educational purposes only.</p>
+            <div className="flex justify-center gap-6 text-xs flex-wrap">
+              <Link href="/about" className="hover:text-cyber-blue transition-colors">
+                About
+              </Link>
+              <span className="text-gray-700">|</span>
+              <Link href="/disclaimer" className="hover:text-cyber-blue transition-colors">
+                Legal Disclaimer
+              </Link>
+              <span className="text-gray-700">|</span>
+              <Link href="/blog" className="hover:text-cyber-blue transition-colors">
+                Blog
+              </Link>
+              <span className="text-gray-700">|</span>
+              <Link href="/strategies" className="hover:text-cyber-blue transition-colors">
+                Strategies
+              </Link>
+              <span className="text-gray-700">|</span>
+              <Link href="/calculators" className="hover:text-cyber-blue transition-colors">
+                Calculators
+              </Link>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

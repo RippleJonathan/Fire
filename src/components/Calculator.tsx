@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Disclaimer from './Disclaimer'
 
 export default function Calculator() {
   const [currentAge, setCurrentAge] = useState(30)
@@ -225,6 +226,8 @@ export default function Calculator() {
           </div>
         </div>
       </div>
+
+      <Disclaimer variant="calculator" className="mt-6" />
     </div>
   )
 }

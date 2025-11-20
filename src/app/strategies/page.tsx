@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { getAllStrategies } from '@/lib/strategies'
 
 export const metadata: Metadata = {
   title: 'FIRE Strategies - Path to Financial Independence',
@@ -7,44 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default function StrategiesPage() {
-  const strategies = [
-    {
-      title: 'Index Fund Investing',
-      description: 'Build wealth through low-cost, diversified index funds. The foundation of passive investing.',
-      category: 'Investment',
-      color: 'cyber-purple',
-    },
-    {
-      title: 'Real Estate Income',
-      description: 'Generate passive income through rental properties and REITs.',
-      category: 'Passive Income',
-      color: 'cyber-green',
-    },
-    {
-      title: 'Tax-Advantaged Accounts',
-      description: 'Maximize 401(k), IRA, and HSA contributions to reduce taxes and accelerate wealth building.',
-      category: 'Tax Strategy',
-      color: 'cyber-blue',
-    },
-    {
-      title: 'Geographic Arbitrage',
-      description: 'Reduce living expenses by relocating to lower cost of living areas.',
-      category: 'Lifestyle',
-      color: 'cyber-pink',
-    },
-    {
-      title: 'Dividend Growth Investing',
-      description: 'Build a portfolio of dividend-paying stocks for reliable passive income.',
-      category: 'Investment',
-      color: 'cyber-yellow',
-    },
-    {
-      title: 'Side Hustles',
-      description: 'Increase your income and savings rate through strategic side projects.',
-      category: 'Income',
-      color: 'cyber-green',
-    },
-  ]
+  const strategies = getAllStrategies()
 
   return (
     <div className="min-h-screen">
@@ -64,20 +28,30 @@ export default function StrategiesPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {strategies.map((strategy, index) => (
-            <div 
+            <Link
               key={index}
-              className="card-cyber group cursor-pointer"
+              href={`/strategies/${strategy.slug}`}
+              className="card-cyber group cursor-pointer hover:scale-105 transition-transform block"
             >
-              <div className="text-xs text-gray-500 uppercase tracking-wider mb-2">
-                {strategy.category}
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-3xl">{strategy.icon}</span>
+                <div className="text-xs text-gray-500 uppercase tracking-wider">
+                  {strategy.category}
+                </div>
               </div>
-              <h2 className={`text-2xl font-cyber font-bold text-${strategy.color} mb-4 group-hover:cyber-glow transition-all`}>
-                {strategy.title}
+              <h2 className={`text-2xl font-cyber font-bold text-${strategy.color} mb-3 group-hover:cyber-glow transition-all`}>
+                {strategy.title.replace(' for FIRE', '').replace(' Strategy', '')}
               </h2>
-              <p className="text-gray-400">
-                {strategy.description}
+              <p className="text-gray-400 text-sm mb-4">
+                {strategy.excerpt}
               </p>
-            </div>
+              <div className="flex items-center justify-between text-xs text-gray-500">
+                <span>{strategy.difficulty}</span>
+                <span className={`text-${strategy.color} font-bold`}>
+                  {strategy.potentialImpact} Impact
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
 

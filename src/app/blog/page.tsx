@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { getAllPosts } from '@/lib/blog'
 
 export const metadata: Metadata = {
   title: 'FIRE Blog - Financial Independence Insights',
@@ -7,32 +8,7 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
-  const posts = [
-    {
-      title: 'The Math Behind the 4% Rule',
-      excerpt: 'Understanding the Trinity Study and safe withdrawal rates for early retirement.',
-      date: '2024-11-15',
-      category: 'Strategy',
-    },
-    {
-      title: 'Coast FIRE: The Middle Path',
-      excerpt: 'How to achieve financial flexibility without waiting for full FIRE.',
-      date: '2024-11-10',
-      category: 'Lifestyle',
-    },
-    {
-      title: 'Tax Optimization for FIRE',
-      excerpt: 'Maximizing tax-advantaged accounts and minimizing your lifetime tax burden.',
-      date: '2024-11-05',
-      category: 'Tax Strategy',
-    },
-    {
-      title: 'Index Funds vs Individual Stocks',
-      excerpt: 'Why passive investing wins for most FIRE seekers.',
-      date: '2024-10-28',
-      category: 'Investment',
-    },
-  ]
+  const posts = getAllPosts()
 
   return (
     <div className="min-h-screen">
@@ -52,9 +28,10 @@ export default function BlogPage() {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {posts.map((post, index) => (
-            <article 
+            <Link
               key={index}
-              className="card-cyber group cursor-pointer hover:scale-105 transition-transform"
+              href={`/blog/${post.slug}`}
+              className="card-cyber group cursor-pointer hover:scale-105 transition-transform block"
             >
               <div className="text-xs text-cyber-blue uppercase tracking-wider mb-2">
                 {post.category}
@@ -65,14 +42,17 @@ export default function BlogPage() {
               <p className="text-gray-400 mb-4">
                 {post.excerpt}
               </p>
-              <div className="text-sm text-gray-500">
-                {new Date(post.date).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
+              <div className="flex justify-between items-center text-sm text-gray-500">
+                <span>
+                  {new Date(post.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </span>
+                {post.readTime && <span>{post.readTime}</span>}
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </main>
