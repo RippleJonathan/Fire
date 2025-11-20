@@ -1,0 +1,18 @@
+# Fire Driven Media - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://firedrivenmedia.com/sitemap.xml
+
+# Disallow admin/internal pages (none currently, but good practice)
+# Disallow: /admin/
+# Disallow: /_next/
+
+# Allow search engines to crawl all content
+Allow: /blog/
+Allow: /calculators/
+Allow: /strategies/
+Allow: /about
+Allow: /disclaimer
