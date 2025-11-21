@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { siteConfig } from '@/lib/seo';
 import { generateOrganizationSchema, generateWebsiteSchema } from '@/lib/structured-data';
 
@@ -33,6 +34,32 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
+
+      <nav className="container mx-auto px-6 py-6 flex justify-between items-center">
+        <Link href="/" className="flex items-center group">
+          <Image 
+            src="/logo.jpg" 
+            alt="Fire Driven Media" 
+            width={60} 
+            height={60}
+            className="rounded-full ring-2 ring-cyber-purple/50 group-hover:ring-cyber-pink transition-all"
+          />
+        </Link>
+        <div className="flex gap-4 md:gap-6 text-sm md:text-base">
+          <Link href="/about" className="text-cyber-blue hover:text-cyber-green transition-colors font-semibold">
+            About
+          </Link>
+          <Link href="/calculators" className="text-cyber-blue hover:text-cyber-green transition-colors">
+            Calculators
+          </Link>
+          <Link href="/strategies" className="text-cyber-blue hover:text-cyber-green transition-colors">
+            Strategies
+          </Link>
+          <Link href="/blog" className="text-cyber-blue hover:text-cyber-green transition-colors">
+            Blog
+          </Link>
+        </div>
+      </nav>
 
       <div className="min-h-screen bg-gradient-to-b from-cyber-darker via-cyber-dark to-cyber-darker py-20 px-4">
         <div className="max-w-4xl mx-auto">

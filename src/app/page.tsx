@@ -11,17 +11,14 @@ export default function Home() {
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-cyber-purple/20 via-cyber-dark to-cyber-blue/20 blur-3xl"></div>
         <nav className="relative z-10 container mx-auto px-6 py-6 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center group">
             <Image 
               src="/logo.jpg" 
-              alt="Fire Driven Media Logo" 
-              width={50} 
-              height={50}
+              alt="Fire Driven Media" 
+              width={60} 
+              height={60}
               className="rounded-full ring-2 ring-cyber-purple/50 group-hover:ring-cyber-pink transition-all"
             />
-            <h1 className="text-2xl md:text-3xl font-cyber font-bold cyber-glow text-cyber-purple group-hover:text-cyber-pink transition-colors">
-              Fire Driven Media
-            </h1>
           </Link>
           <div className="flex gap-4 md:gap-6 text-sm md:text-base">
             <Link href="/about" className="text-cyber-blue hover:text-cyber-green transition-colors font-semibold">
@@ -61,7 +58,7 @@ export default function Home() {
               Read My Story
             </Link>
             <Link 
-              href="/calculators/fire" 
+              href="/#calculator" 
               className="px-6 py-3 bg-cyber-blue text-cyber-darker font-bold uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,217,255,0.6)]"
             >
               Calculate Your Timeline
@@ -115,7 +112,7 @@ export default function Home() {
       </section>
 
       {/* Interactive Calculator Section */}
-      <section className="container mx-auto px-6 py-16">
+      <section id="calculator" className="container mx-auto px-6 py-16 scroll-mt-20">
         <h2 className="text-4xl font-cyber font-bold text-center mb-4 text-cyber-purple">
           Calculate Your FIRE Timeline
         </h2>
@@ -174,7 +171,7 @@ export default function Home() {
             <span className="text-cyber-blue text-sm font-semibold group-hover:text-cyber-pink transition-colors">Read Article →</span>
           </Link>
           
-          <Link href="/calculators/fire" className="card-cyber group hover:border-cyber-blue/50 transition-all">
+          <Link href="/#calculator" className="card-cyber group hover:border-cyber-blue/50 transition-all">
             <div className="text-2xl font-cyber font-bold text-cyber-blue mb-4 group-hover:cyber-glow transition-all">
               FIRE Calculator
             </div>
