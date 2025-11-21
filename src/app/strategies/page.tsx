@@ -18,8 +18,8 @@ export default function StrategiesPage() {
           <Image 
             src="/logo.jpg" 
             alt="Fire Driven Media" 
-            width={60} 
-            height={60}
+            width={80} 
+            height={80}
             className="rounded-full ring-2 ring-cyber-purple/50 group-hover:ring-cyber-pink transition-all"
           />
         </Link>
