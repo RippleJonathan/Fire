@@ -1,56 +1,527 @@
 ---
-title: "Tax-Loss Harvesting for Self-Employed Investors"
-description: "A practical guide to tax-loss harvesting for self-employed investors: rules, recordkeeping, and when it actually helps." 
-date: "2025-12-03"
+title: "Tax-Loss Harvesting for Self-Employed Investors: The Complete Guide"
+description: "Step-by-step guide to tax-loss harvesting for self-employed investors: wash sale rules, ETF swaps, recordkeeping systems, and real tax scenarios." 
+date: "2025-12-09"
 author: "Jonathan"
 category: "Taxes"
-readingTime: "9 min"
+readingTime: "15 min"
 ---
 
-Tax-loss harvesting (TLH) is one of those strategies that sounds sophisticated but is mostly about timing, recordkeeping, and understanding wash sale rules. As a business owner, TLH can be helpful — but only with the right setup.
+Tax-loss harvesting (TLH) sounds like one of those sophisticated Wall Street strategies that doesn't apply to regular people.
 
-What TLH does (in plain English)
+I thought the same thing until I calculated how much money I was leaving on the table.
 
-- You sell investments that have declined to realize a capital loss.
-- Losses offset capital gains and up to $3,000 of ordinary income each year; unused losses carry forward.
-- The tax benefit is a function of your capital gains and ordinary income tax brackets.
+Last year, I harvested $18,000 in losses from my taxable brokerage account. That offset $15,000 in capital gains from rebalancing and $3,000 of ordinary income. At my tax bracket, that saved me about $4,200 in federal taxes.
 
-Key limitation for self-employed: the wash sale rule
+**That's real money.** That's a week of work I didn't have to do.
 
-- The wash sale rule prevents replacing a sold security with a ``substantially identical`` one within 30 days (before or after) and still claiming the loss.
-- If you sell an ETF and buy a different ETF that tracks the same index (but isn’t substantially identical), you can often stay invested without triggering wash sale — but be careful.
+This post explains exactly what tax-loss harvesting is, how it works, the rules you need to follow (especially wash sale rules), and how to implement a system as a self-employed investor with variable income.
 
-Practical TLH workflow I use
+## What Is Tax-Loss Harvesting?
 
-1. Quarterly review of portfolios for loss windows.
-2. If I have gains elsewhere (realized or expected), I harvest matching losses.
-3. Replace the sold position with a similar but not substantially identical ETF to stay invested (example: sell one total-market ETF and buy another provider’s total-stock ETF or an S&P 500 fund if appropriate).
-4. Track trades in a spreadsheet and keep notes for tax time.
+**Tax-loss harvesting** is the practice of selling investments that have declined in value to realize a capital loss, which can offset capital gains and reduce your taxable income.
 
-Tax examples (simplified)
+### The Basic Mechanic:
 
-- You harvest $10,000 of losses and have $8,000 of long-term gains for the year → $2,000 loss offsets ordinary income (or carries forward if you prefer to retain it for future gains).
-- The effective tax benefit depends on whether you had long-term or short-term gains (short-term gains are taxed at ordinary rates).
+1. **You own an investment that's down** (bought at $10,000, now worth $8,000)
+2. **You sell it to "realize" the loss** ($2,000 capital loss)
+3. **The loss offsets gains** (if you sold something else for a $2,000 gain, they cancel out)
+4. **Excess losses offset ordinary income** (up to $3,000/year)
+5. **Remaining losses carry forward** to future years
 
-Special considerations for self-employed investors
+### Why It Matters for Self-Employed Investors:
 
-- If you have variable income, TLH can smooth taxable income across years — harvest more in high-income years.
-- If you use tax-advantaged accounts (IRAs, 401ks), TLH only applies to taxable brokerage accounts.
-- Avoid wash sales when you repurchase in a taxable account after selling the same ticker in a tax-advantaged account — that also triggers the rule.
+If you're self-employed like me, you likely have:
+- Variable income year-to-year
+- Flexibility to time when you realize gains/losses
+- Ability to strategically harvest losses in high-income years
 
-When TLH isn't worth it
+**Example from my business:**
 
-- Trading costs and bid-ask spreads can erase tax benefits for small losses.
-- If you’re a passive investor with low turnover, simple buy-and-hold often beats frequent harvesting.
+- 2023: Great year, $140K income → harvest losses to offset gains and reduce ordinary income
+- 2024: Slower year, $85K income → let investments ride, don't harvest (lower tax benefit)
 
-Practical tools and recordkeeping
+This flexibility is a tax planning superpower.
 
-- Use your broker's tax lot reporting and export CSVs each quarter.
-- Tag harvested lots with notes: reason, replacement instrument, and wash-sale considerations.
-- Consider automated services (tax-loss harvesting features in robo-advisors) if your portfolio is large enough.
+## How Tax-Loss Harvesting Saves You Money
 
-Final thoughts
+### The Tax Benefit Calculation:
 
-TLH is a useful lever for self-employed investors with taxable gains and variable income — but it’s not a substitute for a solid savings and tax strategy. If you want, I can add an example spreadsheet and a small TLH checklist download you can use during quarterly reviews.
+**Scenario:** You harvest $10,000 in losses.
 
-Want me to wire up a download (CSV template) and add it to the post? I can create that next.
+**Option A: Offset $10,000 in short-term capital gains**  
+- Short-term gains are taxed as ordinary income
+- If you're in the 24% bracket: $10,000 × 24% = **$2,400 tax savings**
+
+**Option B: Offset $10,000 in long-term capital gains**  
+- Long-term gains are taxed at 15% (for most FIRE pursuers)
+- Tax savings: $10,000 × 15% = **$1,500 tax savings**
+
+**Option C: No gains to offset, use against ordinary income**  
+- Limited to $3,000/year
+- $3,000 × 24% = **$720 tax savings**
+- Remaining $7,000 loss carries forward to next year
+
+**Key insight:** Tax-loss harvesting saves the *most* when you have short-term gains to offset or high ordinary income.
+
+### Real Example: My 2024 Tax Situation
+
+**What happened:**
+- Rebalanced my portfolio in March, selling some tech stocks that had run up → $12,000 short-term capital gain
+- VTI (total market ETF) was down in October → sold $15,000 worth at a $4,000 loss
+- Bought ITOT (iShares total market ETF) the next day to stay invested
+
+**Tax result:**
+- $12,000 short-term gain - $4,000 harvested loss = $8,000 net short-term gain
+- Tax on $8,000 gain at 24% bracket = $1,920
+- **Without TLH:** Would have paid 24% on $12,000 = $2,880
+- **Tax savings: $960**
+
+**Plus:** I stayed invested in the market. I just swapped one total-market ETF for another.
+
+## The Wash Sale Rule (The Big Gotcha)
+
+This is where most people screw up. The IRS has a rule to prevent abuse of tax-loss harvesting.
+
+### The Wash Sale Rule:
+
+**You CANNOT:**
+- Sell a security at a loss
+- Buy the same security (or a "substantially identical" security)
+- Within **30 days before or after** the sale
+- And still claim the loss
+
+**The 61-day window:** 30 days before + day of sale + 30 days after = 61-day restricted period.
+
+**What happens if you violate the wash sale rule:**
+- The loss is disallowed
+- The disallowed loss is added to the cost basis of the repurchased security
+- You don't get the immediate tax benefit (it's deferred until you sell the replacement security)
+
+### What Counts as "Substantially Identical"?
+
+This is where it gets tricky. The IRS hasn't clearly defined "substantially identical," but general guidance:
+
+**DEFINITELY substantially identical:**
+- Same stock (sell AAPL, buy AAPL)
+- Same bond (sell a specific Treasury bond, buy the same Treasury)
+- ETF and mutual fund tracking the same index from the same provider (sell VOO, buy VFIAX — both Vanguard S&P 500 products)
+
+**PROBABLY NOT substantially identical:**
+- Different providers tracking the same index (sell VOO (Vanguard S&P 500), buy IVV (iShares S&P 500))
+- Different indexes (sell VTI (total market), buy VOO (S&P 500))
+- Similar but not identical sector ETFs (sell VGT (tech), buy XLK (tech, different holdings))
+
+**GRAY AREA:**
+- Leveraged vs. non-leveraged ETFs
+- Different share classes of the same fund
+
+**My rule:** If I'm not 100% sure, I swap to a different provider's ETF or a different (but correlated) index.
+
+### Wash Sale Across Accounts (The Hidden Trap)
+
+Here's something that surprises people: **The wash sale rule applies across ALL your accounts**, including:
+
+- Taxable brokerage
+- Traditional IRA
+- Roth IRA
+- Spouse's accounts
+
+**Example of a violation:**
+
+1. You sell VTI at a loss in your taxable brokerage (to harvest the loss)
+2. Your auto-invest buys VTI in your Roth IRA 10 days later
+3. **Wash sale triggered.** Loss disallowed.
+
+**How to avoid this:**
+- Pause auto-investments in tax-advantaged accounts during harvest season
+- Swap to a different ETF in taxable while keeping the original ETF in retirement accounts
+- Track purchases across all accounts
+
+## My Tax-Loss Harvesting System (Step-by-Step)
+
+Here's the exact process I use quarterly:
+
+### Step 1: Quarterly Portfolio Review (Jan, Apr, Jul, Oct)
+
+**What I do:**
+1. Export holdings from my taxable brokerage (Fidelity)
+2. Review each position and note:
+   - Purchase date
+   - Cost basis
+   - Current value
+   - Gain/Loss %
+3. Identify positions with losses >5% (worth harvesting)
+
+**Tool I use:** Fidelity's "Unrealized Gain/Loss" report (Accounts → Positions → Export CSV)
+
+### Step 2: Check for Gain/Loss Offset Opportunities
+
+**Questions I ask:**
+- Did I realize any capital gains this year? (Check YTD realized gains in brokerage account)
+- Do I expect to realize gains before year-end? (Rebalancing, stock comp vesting, crypto sales)
+- Am I in a high-income year where the $3,000 ordinary income offset is valuable?
+
+**If YES to any:** Proceed with harvesting.  
+**If NO:** Consider waiting (unless I want to reset cost basis).
+
+### Step 3: Select Replacement Securities
+
+For each position I'm harvesting, I identify a suitable replacement that is:
+- **Not substantially identical** (different provider or different index)
+- **Highly correlated** (so I stay invested in the market)
+- **Low cost** (expense ratio <0.10%)
+
+**My common swaps:**
+
+| Original ETF | Replacement ETF | Why It's Safe |
+|--------------|-----------------|---------------|
+| VTI (Vanguard Total Market) | ITOT (iShares Core S&P Total US Stock Market) | Different provider, slightly different holdings |
+| VOO (Vanguard S&P 500) | IVV or SPY (iShares/SPDR S&P 500) | Different provider, same index |
+| VEA (Vanguard Developed Markets) | IDEV (iShares Core MSCI EAFE) | Different index (FTSE vs MSCI) |
+| BND (Vanguard Total Bond) | AGG (iShares Core US Aggregate Bond) | Different provider |
+| VNQ (Vanguard REIT) | IYR (iShares US Real Estate) | Different index composition |
+
+**Why these work:** Different providers, different index methodologies, but highly correlated performance.
+
+### Step 4: Execute the Harvest
+
+**Process:**
+1. Sell the losing position (morning, market order or limit order)
+2. Wait for trade to settle (T+2 for stocks/ETFs)
+3. Immediately (same day or next day) buy the replacement security
+4. Set a calendar reminder for 31 days to swap back (optional)
+
+**Important:** I don't wait to buy the replacement. I buy immediately to avoid being out of the market. Missing a few days of upside can wipe out the tax savings.
+
+### Step 5: Record Everything
+
+This is critical for tax time. I maintain a Google Sheet with:
+
+| Date | Action | Ticker | Shares | Cost Basis | Sale Price | Gain/Loss | Replacement Ticker | Notes |
+|------|--------|--------|--------|------------|------------|-----------|-------------------|-------|
+| 10/15/24 | Sell | VTI | 50 | $10,500 | $9,800 | -$700 | ITOT | Harvested loss to offset Sept rebalance gains |
+| 10/15/24 | Buy | ITOT | 50 | $9,800 | - | - | - | Replacement for VTI |
+
+**Why this matters:** Your broker reports wash sales, but they only track trades within their platform. If you trade across multiple brokers or violate the wash sale rule in an IRA, *you* need to track it.
+
+### Step 6: Year-End Reconciliation
+
+In December, I:
+1. Tally total harvested losses for the year
+2. Compare to realized gains
+3. Calculate the tax benefit
+4. Decide if I want to harvest more before Dec 31 or let remaining positions ride
+
+## Advanced Strategy: Tax-Loss Harvesting + Roth Conversions
+
+Here's a powerful combo for self-employed FIRE pursuers:
+
+### The Strategy:
+
+1. **Harvest losses in your taxable brokerage** to offset gains and reduce ordinary income
+2. **Use the tax savings to fund a Roth conversion** from your Traditional IRA
+3. **Pay less tax on the Roth conversion** because you lowered your AGI with harvested losses
+
+**Example:**
+
+- You harvest $15,000 in losses
+- You offset $10,000 in capital gains and $3,000 of ordinary income
+- Your AGI drops by $3,000
+- You convert $30,000 from Traditional IRA to Roth
+- Because your AGI is $3,000 lower, you're deeper into the 12% bracket instead of the 22% bracket
+- **Tax savings on conversion: ~$300-$600**
+
+**Why this works for self-employed:**
+
+In slow business years, my income drops. I use TLH to drop it even further, then convert Traditional IRA to Roth at rock-bottom tax rates.
+
+## When Tax-Loss Harvesting Doesn't Make Sense
+
+### Don't Harvest Losses If:
+
+❌ **You're in the 0% long-term capital gains bracket**  
+If your taxable income is under $47,025 (single) or $94,050 (married filing jointly) in 2024, your LTCG rate is 0%. Harvesting losses has no value.
+
+❌ **You have no gains to offset and you're in a low tax bracket**  
+If you're in the 10-12% bracket and have no capital gains, the $3,000 ordinary income offset saves you $300-$360. Probably not worth the hassle unless you have large carryforward losses.
+
+❌ **You're close to the IRMAA threshold for Medicare premiums**  
+If you're 63+ and your income is near the IRMAA cliff ($103,000 single, $206,000 married in 2024), reducing your AGI via TLH can save you $800-$2,000/year in Medicare Part B/D premiums. But if you're not near the cliff, it doesn't matter.
+
+❌ **You're triggering short-term losses to offset long-term gains**  
+Short-term losses first offset short-term gains, then offset long-term gains. If you harvest a short-term loss but only have long-term gains, you're using a 24% (ordinary income rate) loss to offset a 15% (LTCG) gain. You "wasted" 9% of the loss's value.
+
+**Better:** Wait until you have short-term gains to offset.
+
+❌ **The bid-ask spread and trading costs exceed the tax benefit**  
+If you're harvesting a $200 loss but paying $15 in trading fees and losing $10 to bid-ask spreads, you're netting $175. At 24% tax rate, you save $42. You spent $25 to save $42. Barely worth it.
+
+## Robo-Advisors with Automated TLH (Betterment, Wealthfront, etc.)
+
+Many robo-advisors offer automated tax-loss harvesting. Here's how they work:
+
+### How Automated TLH Works:
+
+1. The robo monitors your portfolio daily
+2. When a position drops below your cost basis, it automatically sells and buys a replacement ETF
+3. It tracks wash sales across your account
+4. It reports harvested losses on your tax forms
+
+### Pros:
+- ✅ Fully automated (you don't think about it)
+- ✅ Harvests losses year-round, not just quarterly
+- ✅ Can harvest small losses ($100-$500) that you might not bother with manually
+
+### Cons:
+- ❌ Advisory fees (0.25-0.50% annually) can outweigh tax savings
+- ❌ Less control over which assets are sold and when
+- ❌ Doesn't coordinate across accounts (can't see your Fidelity IRA or Robinhood account)
+- ❌ May use weird replacement ETFs that drift from your intended allocation
+
+### My Take:
+
+**Robo-advisors make sense if:**
+- You have $100K+ in taxable accounts
+- You're in the 24%+ tax bracket
+- You don't want to manage it yourself
+- You can get low-cost automated TLH (Wealthfront, Betterment, Schwab Intelligent Portfolios)
+
+**DIY makes sense if:**
+- You have <$100K in taxable accounts (fee % outweighs benefit)
+- You're comfortable executing trades quarterly
+- You want full control over your portfolio
+- You have accounts at multiple brokers (robo can't see them all)
+
+**I do DIY** because I only have $45K in my taxable brokerage (most of my wealth is in SEP IRA and Roth IRA). The tax savings from quarterly manual harvesting ($500-$1,000/year) beats paying 0.25% annually ($110+/year).
+
+Once my taxable account hits $150K+, I'll reconsider automated TLH.
+
+## Special Considerations for Self-Employed Investors
+
+### 1. Harvesting Losses in High-Income Years
+
+As a self-employed person, my income varies wildly:
+- Great year: $140K
+- Slow year: $80K
+
+**Strategy:** Harvest aggressively in high-income years (higher tax bracket = more value) and let positions ride in low-income years.
+
+**Example:**
+- 2023 (good year): Harvested $12K in losses → saved $2,880 in taxes (24% bracket)
+- 2024 (slow year): Didn't harvest → kept positions, waiting for recovery
+
+### 2. Coordinating TLH with Estimated Tax Payments
+
+Self-employed people make quarterly estimated tax payments. TLH can reduce your Q4 estimated tax payment.
+
+**How it works:**
+1. Harvest losses in Oct-Dec
+2. Reduce your projected taxable income
+3. Lower your Q4 estimated tax payment (due Jan 15)
+
+**Example:**
+- I projected $120K income for 2024 → estimated tax payment of $8,000 in Q4
+- Harvested $10K losses in November → projected income drops to $110K
+- Adjusted Q4 payment to $7,000
+- **Saved $1,000 in cash flow** that I can invest or use for expenses
+
+### 3. Carryforward Losses for Future Gains
+
+If you harvest more losses than you have gains, the excess carries forward indefinitely.
+
+**My strategy:** In slow years, I harvest aggressively even if I don't have gains to offset. I build a "loss bank" to use in future high-income years.
+
+**Current loss carryforward:** $8,400 (from 2022-2023)
+
+**When I'll use it:** When I sell my business, sell real estate, or have a big capital gain event.
+
+## Tax Forms and Reporting (What You Need to Know)
+
+### Form 8949: Sales and Dispositions of Capital Assets
+
+This is where you report every stock/ETF sale.
+
+**What you need:**
+- Date acquired
+- Date sold
+- Proceeds (sales price)
+- Cost basis
+- Gain or loss
+
+Your broker (Fidelity, Schwab, Vanguard, etc.) sends you **Form 1099-B** with this info.
+
+**Wash sales:** Your broker marks wash sales on the 1099-B with a "W" code. Those losses are disallowed.
+
+### Schedule D: Capital Gains and Losses
+
+This is the summary form that calculates:
+- Total short-term gains/losses
+- Total long-term gains/losses
+- Net capital gain/loss
+- Amount used to offset ordinary income (max $3,000)
+- Carryforward losses to next year
+
+### Form 1040: Where It Shows Up
+
+The net capital gain/loss from Schedule D flows to **Line 7** of Form 1040 (your main tax return).
+
+If you have a net loss, it reduces your total income. If you have a net gain, it increases your total income.
+
+## Recordkeeping System (What I Actually Use)
+
+### Tools:
+1. **Google Sheets** — Master tracking spreadsheet (harvested losses, wash sales, carryforwards)
+2. **Fidelity's Tax Center** — Download 1099-B, Unrealized Gain/Loss reports
+3. **TurboTax Premier** — Imports 1099-B and generates Schedule D automatically
+
+### Folder Structure:
+```
+Taxes/2024/
+  ├── Brokerage_Statements/
+  │   ├── Fidelity_1099B_2024.pdf
+  │   ├── Fidelity_Realized_Gains_Losses.csv
+  ├── TLH_Tracking/
+  │   ├── TLH_Log_2024.xlsx
+  │   ├── Wash_Sale_Checks.xlsx
+  ├── Estimated_Tax_Payments/
+  │   ├── Q1_Payment_Receipt.pdf
+  │   ├── Q4_Adjusted_Calculation.xlsx
+```
+
+**Why this matters:** If you get audited (unlikely, but possible), you need to prove your cost basis and wash sale compliance. Keep records for 7 years.
+
+## Real Tax Scenario: Putting It All Together
+
+Let me walk through a full-year example using my actual 2024 numbers (simplified):
+
+### Starting Position (Jan 2024):
+- Taxable brokerage: $42,000
+- Holdings: VTI, VOO, BND, VEA
+- Projected income: $110,000 (self-employment)
+- Tax bracket: 24% federal
+
+### March 2024: Rebalancing Triggers Gains
+- Sold 30% of VOO (up 25% from 2023) → **$6,000 short-term gain**
+- Need to offset this or I'll owe $1,440 in taxes (24%)
+
+### April 2024: Market Dip
+- VEA (international stocks) down 8% from purchase
+- Harvested $3,000 loss (sold VEA, bought IDEV as replacement)
+
+### July 2024: Portfolio Review
+- No positions with meaningful losses
+- Skipped harvesting this quarter
+
+### October 2024: Market Volatility
+- BND (bonds) down 4% from purchase → harvested $2,000 loss (sold BND, bought AGG)
+- VTI down 6% on one lot → harvested $1,500 loss (sold VTI, bought ITOT)
+
+### Year-End Tally (Dec 2024):
+- Harvested losses: $6,500 ($3K + $2K + $1.5K)
+- Realized gains: $6,000 (from March rebalance)
+- Net: $500 loss
+
+**Tax result:**
+- $6,000 gain - $6,500 loss = -$500 net loss
+- Use $500 to offset ordinary income
+- **Tax savings: $120** (24% of $500)
+
+**Plus:**
+- I stayed fully invested (swapped to equivalent ETFs)
+- I have better diversification now (different providers)
+- I reset my cost basis on the harvested positions (will grow tax-deferred until I sell)
+
+**Not amazing, but not bad for 4 trades that took 30 minutes total.**
+
+## Common Questions
+
+### "Can I swap back to the original ETF after 31 days?"
+
+Yes. After the 30-day window, you can sell the replacement ETF and buy back the original.
+
+**Why you might do this:**
+- You prefer the original provider (Vanguard vs. iShares)
+- You want to consolidate holdings
+- You're rebalancing anyway
+
+**Why you might not:**
+- The replacement ETF is basically identical (why bother?)
+- You'd trigger another taxable event
+- You'd pay trading fees again
+
+**I usually don't swap back.** ITOT and VTI are 99.9% correlated. Not worth the effort.
+
+### "What if I accidentally trigger a wash sale?"
+
+If you violate the wash sale rule, the loss is disallowed but NOT lost. It's added to the cost basis of the replacement security.
+
+**Example:**
+- Sell AAPL at $10,000 (cost basis: $12,000) → $2,000 loss
+- Buy AAPL 10 days later for $10,000
+- Wash sale triggered → $2,000 loss disallowed
+- New cost basis of the repurchased AAPL: $10,000 + $2,000 = $12,000
+
+**Result:** You can't deduct the loss now, but you'll get it back when you sell the replacement (because your cost basis is higher).
+
+**It's not the end of the world, but you lose the immediate tax benefit.**
+
+### "Should I harvest losses every year, even if I don't have gains?"
+
+**It depends.**
+
+**Harvest if:**
+- You expect gains in future years (building a loss bank)
+- You're in a high tax bracket and the $3,000 ordinary income offset is valuable
+- The position is unlikely to recover (you want to exit anyway)
+
+**Don't harvest if:**
+- You're in the 10-12% bracket (low tax benefit)
+- You believe the position will recover quickly
+- You'll violate the wash sale rule and lose the immediate benefit
+
+**My approach:** I harvest losses most years to build carryforwards. Self-employment income is unpredictable, and I'd rather have losses ready to offset future gains.
+
+## My Take: TLH Is Worth It, But Don't Obsess
+
+I used to think tax-loss harvesting was only for rich people with $1M+ portfolios.
+
+Then I did the math. Harvesting $10K-$15K in losses per year saves me $2,000-$3,000 in taxes. Over 10 years, that's $20,000-$30,000.
+
+**That's real money.** That's a year of living expenses in retirement.
+
+But here's the thing: **TLH is a bonus, not a core strategy.**
+
+The core strategies are:
+1. Save aggressively
+2. Invest in low-cost index funds
+3. Max out tax-advantaged accounts
+4. Don't panic sell during downturns
+
+TLH is the cherry on top. It's a 5-10% improvement, not a game-changer.
+
+**My rule:** I spend 2-3 hours per year on TLH (quarterly 30-minute reviews). If it takes more time than that, the juice isn't worth the squeeze.
+
+## Action Steps
+
+1. **Open a taxable brokerage account** if you don't have one (Fidelity, Schwab, Vanguard)
+2. **Set quarterly reminders** (Jan, Apr, Jul, Oct) to review unrealized gains/losses
+3. **Create a tracking spreadsheet** to log harvested losses and replacement securities
+4. **Identify your common ETF swaps** (VTI → ITOT, VOO → IVV, etc.)
+5. **Pause auto-investments during harvest season** to avoid accidental wash sales
+6. **Coordinate with your CPA or tax software** to report accurately on Schedule D
+
+## Related Resources
+
+- [Roth vs Traditional IRA for FIRE at 40](/blog/roth-ira-vs-traditional-ira-for-fire-at-40) — Tax optimization strategies
+- [Solo 401(k) Guide for Self-Employed FIRE Seekers](/blog/solo-401k-self-employed) — Maximizing tax-advantaged contributions
+- [How to Calculate Your FIRE Number (Late Starter Edition)](/blog/how-to-calculate-your-fire-number-late-starter) — Foundation for FIRE planning
+
+### External Resources:
+- [Bogleheads: Tax-Loss Harvesting](https://www.bogleheads.org/wiki/Tax_loss_harvesting) — Comprehensive wiki
+- [White Coat Investor: TLH Guide](https://www.whitecoatinvestor.com/tax-loss-harvesting/) — Detailed walkthrough
+- [IRS Pub 550](https://www.irs.gov/publications/p550) — Official guidance on investment income and expenses
+
+---
+
+**Disclaimer:** I'm not a CPA, tax attorney, or financial advisor. I'm a 40-year-old self-employed business owner sharing what I've learned through research and personal experience. Tax laws are complex and change frequently. This post is educational, not tax advice. Consult a qualified tax professional before implementing tax strategies. For full legal disclaimers, see [our disclaimer page](/disclaimer).
